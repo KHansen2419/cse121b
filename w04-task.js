@@ -78,8 +78,8 @@ myProfile.placesLived.forEach(placesLived => {
 
 myProfile.placesLived.forEach(placesLived => {
     let dd = document.createElement("dd");
-    dd.innerHTML = length.place;
-    document.querySelector('#places-lived').appendChild(dd);
+    dd.innerHTML = `<strong>$ {places.place}`;
+    document.getElementById('places-lived').appendChild(ddbreak);
 
 });
 
