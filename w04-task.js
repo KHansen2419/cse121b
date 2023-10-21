@@ -4,7 +4,7 @@
 
 let myProfile= {
     name: "Katie Hansen",
-    photo: "w02-task/images/myself.png",
+    photo: "myself.png",
     favoriteFoods: ['steak', 'queso', 'tacos', 'Korean BBQ', 'dark chocolate'],
     hobbies: ['knitting', 'baking', 'crocheting', 'writing', 'watching movies'],
     placesLived: [],
