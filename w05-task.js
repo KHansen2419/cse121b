@@ -10,11 +10,11 @@ const templeList=[];
 
 const displayTemples= (temples)=>{
     temples.forEach((temple) => {
-        const article = document.createElement("article");
-        const h3= document.createElement("h3");
+        let article = document.createElement("article");
+        let h3= document.createElement("h3");
         h3.textContent= temple.templeName + "Temple";
 
-        const img = document.createElement("img");
+        let img = document.createElement("img");
         img.setAttribute=('src', temple.imageUrl);
         img.setAttribute=('alt', temple.location);
 
@@ -38,16 +38,16 @@ const getTemples= async() =>{
         const data = await response.json();
         templeList.push(data);
         displayTemples(templeList);
+        console.log(templeList);
 }
 };
 
 
 /* reset Function */
 
-function reset() {
-    return document.getElementById('temples').innerHTML = '';
-  };
-  
+const reset= function(){
+    templesElement
+}
 
 
 /* sortBy Function */
@@ -65,8 +65,8 @@ switch (filter) {
     displayTemples(temples.filter((temple) => temple.location.includes("Utah")));
 
          break;
-    case 'nonutah':
-        const nonUtahTemples = temples.filter((temple) =>
+    case 'notutah':
+        notUtahTemples = temples.filter((temple) =>
 
         displayTemples(temples.filter((temple) =>!temple.location.includes("Utah"))));
 
