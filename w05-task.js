@@ -52,12 +52,33 @@ function reset() {
 
 /* sortBy Function */
 
-function sortBy(e) {
+function sortBy(temples) {
     // - Calls the reset function
     reset();
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
-let sort = document.getElementById('sortBy');
+let filter = document.getElementById('sortBy');
 
+switch (filter) {
+
+    case 'utah':
+
+    displayTemples(temples.filter((temple) => temple.location.includes("Utah")));
+
+         break;
+    case 'nonutah':
+        const nonUtahTemples = temples.filter((temple) =>
+
+        displayTemples(temples.filter((temple) =>!temple.location.includes("Utah"))));
+
+   
+      break
+      case "older":
+        //Filter for temples dedicated before 1950
+        displayTemples(temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
+        break;
+    default:
+      displayTemples(temples);
+  }
   
 if (e.target.value === 'templeNameAscending') {
   let sorted = templeList.sort(function(a,b) {return a.templeName>b.templeName ? 1 : -1});
@@ -74,6 +95,11 @@ if (e.target.value === 'templeNameAscending') {
 
 
 
-getTemples();
+
 
 /* Event Listener */
+
+document.querySelector('#sortBy').addEventListener('change', () => {sortBy(templeList)});
+
+
+getTemples();
