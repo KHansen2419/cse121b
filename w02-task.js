@@ -4,9 +4,9 @@
 
 /* Step 2 - Variables */
 
-let fullName= "Katie Hansen";
-let currentYear= "2023";
-let profilePicture= 'images/myself.png';
+let fullName= 'Katie Hansen';
+let currentYear= '2023';
+let profilePicture= 'myself.png';
 
 
 /* Step 3 - Element Variables */
@@ -14,7 +14,7 @@ let profilePicture= 'images/myself.png';
 const nameElement= document.getElementById('name');
 const foodElement= document.getElementById([foods]);
 const yearElement= document.querySelector('#year');
-const imageElement=document.getElementById('images/myself.png');
+const imageElement=document.getElementById('myself.png');
 
 
 
