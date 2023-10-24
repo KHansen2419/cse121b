@@ -118,4 +118,4 @@ let multiply= numbersArray.map(number => number *2);
 
 let sumOfMultiplied= multiply.reduce((sum, number) => sum + number);
 
-document.querySelector('#sumOfMultiplied').tectContext=sumOfMultiplied;
+document.querySelector('#sumOfMultiplied').textContext=sumOfMultiplied;
