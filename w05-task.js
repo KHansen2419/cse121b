@@ -21,6 +21,9 @@ const displayTemples= (temples)=>{
         article.appendChild(h3);
         article.appendChild(img);
         templesElement.appendChild(article);
+
+        console.log(templeList);
+        getTemples(displayTemples);
         
     });
 }
@@ -46,7 +49,7 @@ const getTemples= async() =>{
 /* reset Function */
 
 const reset= function(){
-    templesElement
+    temples
 }
 
 
@@ -62,13 +65,12 @@ switch (filter) {
 
     case 'utah':
 
-    displayTemples(temples.filter((temple) => temple.location.includes("Utah")));
+    displayTemples(temples.filter((utahTemples => {temples.location.includes("Utah")})));
 
          break;
     case 'notutah':
-        notUtahTemples = temples.filter((temple) =>
 
-        displayTemples(temples.filter((temple) =>!temple.location.includes("Utah"))));
+    displayTemples(temples.filter((notUtahTemples => {!temples.location.includes("Utah")})));
 
    
       break
