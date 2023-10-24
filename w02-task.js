@@ -6,7 +6,7 @@
 
 let fullName= 'Katie Hansen';
 let currentYear= '2023';
-let profilePicture= 'myself.png';
+let profilePicture= 'images/myself.png';
 
 
 /* Step 3 - Element Variables */
@@ -14,7 +14,7 @@ let profilePicture= 'myself.png';
 const nameElement= document.getElementById('name');
 const foodElement= document.getElementById('food');
 const yearElement= document.querySelector('#year');
-let imageElement=document.getElementById('picture');
+let imageElement=document.querySelector('img');
 
 
 
@@ -23,7 +23,7 @@ let imageElement=document.getElementById('picture');
 nameElement.innerHTML= `<strong>${fullName}</strong>`;
 currentYear.textContent= `${year}`;
 imageElement.setAttribute('src', profilePicture);
-imageElement.setAttribute(alt, 'Profile Image of [profilePicture]');
+imageElement.setAttribute('alt', 'Profile Image of ${profilePicture}');
 
 
 
@@ -42,11 +42,10 @@ foodElement.innerHTML = favoriteFoods.join(', ') + '<br>' + foodElement.innerHTM
 
 
 foodElement.innerHTML+= `<br>${favoriteFoods}`;
-foods.splice(0, 1);
+favoriteFoods.shift();
 foodElement.innerHTML+= `<br>${favoriteFoods}`;
-foods.splice(4,1);
+favoriteFoods.pop();
 foodElement.innerHTML+= `<br>${favoriteFoods}`;
-
 
 
 
