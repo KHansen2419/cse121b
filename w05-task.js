@@ -23,7 +23,7 @@ const displayTemples= (temples)=>{
         templesElement.appendChild(article);
 
         console.log(templeList);
-        getTemples(displayTemples);
+        
         
     });
 }
@@ -39,7 +39,7 @@ const getTemples= async() =>{
         // the API will send us JSON...but we have to convert the response before we can use it
         // .json() also returns a promise...so we await it as well.
         const data = await response.json();
-        templeList.push(data);
+        templeList=data;
         displayTemples(templeList);
         console.log(templeList);
 }
