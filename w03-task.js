@@ -120,4 +120,4 @@ let multiplyBy2= numbersArray.map(number => number *2);
 
 let sumOfMultiplied= multiplyBy2.reduce((sum, number) => sum + number);
 
-document.querySelector('#sumOfMultiplied').textContext=sumOfMultiplied;
+document.querySelector('#sumOfMultiplied').innerHTML=sumOfMultiplied;
