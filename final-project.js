@@ -36,7 +36,7 @@ const getYarns= async() =>{
         // .json() also returns a promise...so we await it as well.
         const data = await response.json();
         yarnList=data;
-        displayTemples(yarnList);
+        displayYarns(yarnList);
         console.log(yarnList);
 }
 };
