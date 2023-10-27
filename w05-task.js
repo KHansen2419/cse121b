@@ -3,7 +3,7 @@
 /* Declare and initialize global variables */
 const templesElement=document.querySelector('#temples');
 
-const templeList=[];
+let templeList=[];
 
 
 /* async displayTemples Function */
