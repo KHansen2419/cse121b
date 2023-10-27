@@ -68,25 +68,40 @@ switch (filter) {
 
     displayYarns(yarns.filter((sportYarns => {yarns.yarnWeight.includes("2-Fine/Sport")})));
       break;
-      case '2-Fine/Sport':
+      case '3-dk':
 
-    displayYarns(yarns.filter((sportYarns => {yarns.yarnWeight.includes("2-Fine/Sport")})));
+    displayYarns(yarns.filter((dkYarns => {yarns.yarnWeight.includes("3-dk")})));
       break;
-      case "older":
-        //Filter for temples dedicated before 1950
-        displayTemples(temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
-        break;
+
+      case '4-worsted':
+
+    displayYarns(yarns.filter((worstedYarns => {yarns.yarnWeight.includes("4-worsted")})));
+      break;
+
+      case '5-bulky':
+
+    displayYarns(yarns.filter((bulkyYarns => {yarns.yarnWeight.includes("5-bulky")})));
+      break;
+      case '6-super bulky':
+
+    displayYarns(yarns.filter((superBulkyYarns => {yarns.yarnWeight.includes("6-Super bulky")})));
+      break;
+      case '7-jumbo':
+
+    displayYarns(yarns.filter((jumboYarns => {yarns.yarnWeight.includes("7-jumbo")})));
+      break;
+      
     default:
-      displayTemples(temples);
+      displayYarns(yarns);
   }
   
-if (e.target.value === 'templeNameAscending') {
-  let sorted = templeList.sort(function(a,b) {return a.templeName>b.templeName ? 1 : -1});
+if (e.target.value === 'yarnNameAscending') {
+  let sorted = yarnList.sort(function(a,b) {return a.yarnName>b.yarnName ? 1 : -1});
   
   return output(sorted);
 
-}else if (e.target.value === 'templeNameDescending') {
-  let sorted = templeList.sort(function(a,b) {return b.templeName>a.templeName ? 1 : -1});
+}else if (e.target.value === 'yarnNameDescending') {
+  let sorted = yarnList.sort(function(a,b) {return b.yarnName>a.yarnName ? 1 : -1});
   
   return output(sorted);
 };
@@ -99,7 +114,7 @@ if (e.target.value === 'templeNameAscending') {
 
 /* Event Listener */
 
-document.querySelector('#sortBy').addEventListener('change', () => {sortBy(templeList)});
+document.querySelector('#sortBy').addEventListener('change', () => {sortBy(yarnList)});
 
 
-getTemples();
+getYarns();
