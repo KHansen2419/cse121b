@@ -15,8 +15,8 @@ const displayTemples= (temples)=>{
         h3.textContent= temple.templeName + " Temple";
 
         let img = document.createElement("img");
-        img.setAttribute=('src', temple.imageUrl);
-        img.setAttribute=('alt', temple.location);
+        img.setAttribute('src', temple.imageUrl);
+        img.setAttribute('alt', temple.location);
 
         article.appendChild(h3);
         article.appendChild(img);
@@ -49,8 +49,8 @@ const getTemples= async() =>{
 /* reset Function */
 
 const reset= function(){
-    temples
-}
+    templesElement.textContent="";
+};
 
 
 /* sortBy Function */
@@ -59,43 +59,29 @@ function sortBy(temples) {
     // - Calls the reset function
     reset();
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
-let filter = document.getElementById('sortBy');
+let filter = document.getElementById('sortBy').value;
 
 switch (filter) {
 
     case 'utah':
-
-    displayTemples(temples.filter((utahTemples => {temples.location.includes("Utah")})));
-
-         break;
+    displayTemples(temples.filter(utahTemples => utahTemples.location.includes("Utah")));
+    break;
     case 'notutah':
-
-    displayTemples(temples.filter((notUtahTemples => {!temples.location.includes("Utah")})));
-
-   
-      break
-      case "older":
+    displayTemples(temples.filter(notUtahTemples => !notUtahTemples.location.includes("Utah")));
+    break;
+    case "older":
         //Filter for temples dedicated before 1950
-        displayTemples(temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
-        break;
+      displayTemples(temples.filter(temple => new Date(temple.dedicated) < new Date(1950, 0, 1)));
+    break;
     default:
       displayTemples(temples);
   }
   
-if (e.target.value === 'templeNameAscending') {
-  let sorted = templeList.sort(function(a,b) {return a.templeName>b.templeName ? 1 : -1});
-  
-  return output(sorted);
 
-}else if (e.target.value === 'templeNameDescending') {
-  let sorted = templeList.sort(function(a,b) {return b.templeName>a.templeName ? 1 : -1});
-  
-  return output(sorted);
-};
 
 };
 
-
+getTemples();
 
 
 
@@ -103,5 +89,3 @@ if (e.target.value === 'templeNameAscending') {
 
 document.querySelector('#sortBy').addEventListener('change', () => {sortBy(templeList)});
 
-
-getTemples();
