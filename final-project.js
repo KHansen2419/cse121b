@@ -109,4 +109,3 @@ getYarns();
 /* Event Listener */
 
 document.querySelector('#sortBy').addEventListener('change', () => {sortBy(yarnList)});
-
