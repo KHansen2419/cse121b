@@ -1,4 +1,3 @@
-
 const yarnElement=document.querySelector('#yarns');
 
 let yarnList=[];
@@ -9,12 +8,8 @@ const displayYarns= (yarns)=>{
     yarns.forEach((yarn) => {
         let article = document.createElement("article");
         let h3= document.createElement("h3");
-        
         h3.textContent= yarn.yarnName;
         
-        
-        
-
         let img = document.createElement("img");
         img.setAttribute('src', yarn.imageUrl);
         img.setAttribute('alt', yarn.yarnWeight);
@@ -109,3 +104,4 @@ getYarns();
 /* Event Listener */
 
 document.querySelector('#sortBy').addEventListener('change', () => {sortBy(yarnList)});
+
