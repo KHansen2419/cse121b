@@ -66,6 +66,13 @@ h2 {
     margin: 1rem 0 .5rem;
 }
 
+p {text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    max-width: 1400px;
+}
+
+
 h1 {
     border-bottom: 1px solid #ccc;
 }
@@ -77,8 +84,8 @@ h1 {
 h2 {
     font-size: 1.5rem;
     color: navy;
-    text-align: center;
-    margin-top: 25px;
+    text-align: middle center;
+    margin-top: 70px;
 }
 
 h3 {
@@ -86,8 +93,15 @@ h3 {
     margin-bottom: 1rem;
 }
 
+h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+
+
 header {
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 picture {
@@ -99,13 +113,14 @@ picture img {
     height: auto;
     border-radius: 5%;
     border: 1px solid #ccc;
-    box-shadow: 0 0 30px #777;
+    box-shadow: 0 0 100px #777;
 }
 
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 240px;
     margin: 0 auto 1rem;
     border: 1px solid rgba(0, 0, 0, .1);
     padding: 1rem;
@@ -248,10 +263,10 @@ footer {
 
 #yarns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: .5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 10fr));
+    grid-gap: 4rem;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
 }
 
 #yarns article {
@@ -275,9 +290,11 @@ footer {
 #yarns img {
     width: 250px;
     height: auto;
-    box-shadow: 0 0 30px #777;
+    box-shadow: 0 0 50px #777;
     margin: .5rem;
 }
+
+
 
 /* Media Queries */
 @media only screen and (min-width: 32.5em) {
