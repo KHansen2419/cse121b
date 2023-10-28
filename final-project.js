@@ -9,11 +9,15 @@ const displayYarns= (yarns)=>{
     yarns.forEach((yarn) => {
         let article = document.createElement("article");
         let h3= document.createElement("h3");
+        
         h3.textContent= yarn.yarnName;
+        
+        
+        
 
         let img = document.createElement("img");
         img.setAttribute('src', yarn.imageUrl);
-        img.setAttribute('alt', yarn.fiber);
+        img.setAttribute('alt', yarn.yarnWeight);
 
         article.appendChild(h3);
         article.appendChild(img);
@@ -30,7 +34,7 @@ const displayYarns= (yarns)=>{
 
 
 const getYarns= async() =>{
-    const response = await fetch("https://run.mocky.io/v3/9427424a-49f0-49ad-b55c-68bf26c9d5b4");
+    const response = await fetch("https://run.mocky.io/v3/19dd2e15-5c34-4ce7-94d0-fa9eea86e1bb");
     if (response.ok) {
         // the API will send us JSON...but we have to convert the response before we can use it
         // .json() also returns a promise...so we await it as well.
@@ -55,40 +59,40 @@ function sortBy(yarns) {
     // - Calls the reset function
     reset();
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
-let filter = document.getElementById('sortBy');
+let filter = document.getElementById('sortBy').value;
 
 switch (filter) {
 
-    case '1-fingering':
+    case '1-Fingering':
 
-    displayYarns(yarns.filter(fingeringYarns => fingeringYarns.includes("1-Fingering")));
+    displayYarns(yarns.filter(fingering => fingering.yarnWeight.includes("1-Fingering")));
 
          break;
-    case '2-Fine/Sport':
+    case '2-Fine/sport':
 
-    displayYarns(yarns.filter(sportYarns => sportYarns.includes("2-Fine/Sport")));
+    displayYarns(yarns.filter(sport => sport.yarnWeight.includes("2-Fine/sport")));
       break;
-      case '3-dk':
+      case '3-DK':
 
-    displayYarns(yarns.filter(dkYarns => dkYarns.includes("3-dk")));
-      break;
-
-      case '4-worsted':
-
-    displayYarns(yarns.filter(worstedYarns => worstedYarns.includes("4-worsted")));
+    displayYarns(yarns.filter(dk => dk.yarnWeight.includes("3-DK")));
       break;
 
-      case '5-bulky':
+      case '4-Worsted':
 
-    displayYarns(yarns.filter(bulkyYarns => bulkyYarns.includes("5-bulky")));
+    displayYarns(yarns.filter(worsted => worsted.yarnWeight.includes("4-Worsted")));
       break;
-      case '6-super bulky':
 
-    displayYarns(yarns.filter(superBulkyYarns => superBulkyYarns.includes("6-Super bulky")));
+      case '5-Bulky':
+
+    displayYarns(yarns.filter(bulky => bulky.yarnWeight.includes("5-Bulky")));
       break;
-      case '7-jumbo':
+      case '6-Super Bulky':
 
-    displayYarns(yarns.filter(jumboYarns => jumboYarns.includes("7-jumbo")));
+    displayYarns(yarns.filter(superBulky => superBulky.yarnWeight.includes("6-Super Bulky")));
+      break;
+      case '7-Jumbo':
+
+    displayYarns(yarns.filter(jumbo => jumbo.yarnWeight.includes("7-Jumbo")));
       break;
       
     default:
